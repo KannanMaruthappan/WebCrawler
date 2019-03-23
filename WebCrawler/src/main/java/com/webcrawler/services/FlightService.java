@@ -49,9 +49,7 @@ public class FlightService {
     }
 
 	public List<FlightDetailsModel> sendOffers(String email) {
-		System.out.println(email);
 		UserDetailsModel userDetailsModel = userServiceDao.getByEmail(email);
-		System.out.println(userDetailsModel);
 		List<FlightDetailsModel> model = dao.getByOrgAndDes(userDetailsModel.getOrg(), userDetailsModel.getDes());
 		sendEmail(model);
 		return model;
